@@ -1,7 +1,32 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-const App = () => {
+const Hello = () => {
+
+  return (
+    <div>
+      <p>Hello world</p>
+    </div>
+  )
+}
+
+ const App = () => {
+
+  return (
+    <div>
+      <h1>Greetings</h1>
+      <Hello />
+      <Hello />
+      <Hello />
+    </div>
+  )
+
+ }
+
+
+
+
+const Test1 = () => {
   const now = new Date()
   const a = 10
   const b = 20
