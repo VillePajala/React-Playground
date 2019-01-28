@@ -1,42 +1,57 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-const Hello = (props) => {
+const Otsikko = (props) => {
 
   return (
     <div>
-      <p>Hello {props.name}, you are {props.age} years old</p>
+      <h1>{props.otsikko}</h1>
+    </div>
+
+  )
+}
+
+const Sisalto = (props) => {
+
+  return (
+    <div>
+      <p>{props.first} {props.first2}</p>
+      <p>{props.second} {props.second2}</p>
+      <p>{props.third} {props.third2}</p>
     </div>
   )
 }
 
- const App = () => {
-  const nimi = "John"
-  const ika = 10
+const Yhteensa = (props) => {
+
   return (
     <div>
-      <h1>Greetings</h1>
-      <Hello name="John" age={26 + 10}/>
-      <Hello name={nimi} age={ika} />
-    </div>
-  )
-
- }
-
-
-
-
-const Test1 = () => {
-  const now = new Date()
-  const a = 10
-  const b = 20
-  return (
-    <div> 
-      <p>Hello world, it is {now.toString()}</p>
-      <p>{a} plus {b} is {a + b}</p>
+      <p>Yhteensä {props.summa}</p>
     </div>
   )
 }
-  
 
-ReactDOM.render(<App />, document.getElementById('root'))
+const App = () => {
+  const kurssi = 'Half Stack -sovelluskehitys'
+  const osa1 = 'Reactin perusteet'
+  const tehtavia1 = 10
+  const osa2 = 'Tiedonvälitys propseilla'
+  const tehtavia2 = 7
+  const osa3 = 'Komponenttien tila'
+  const tehtavia3 = 14
+
+  return (
+    <div>
+      <Otsikko otsikko={kurssi} />
+      <Sisalto first={osa1} first2={tehtavia1} />
+      <Sisalto second={osa2} second2={tehtavia2} />
+      <Sisalto third={osa3} third2={tehtavia3} />
+      <Yhteensa summa={tehtavia1 + tehtavia2 + tehtavia3} />
+    </div>
+  )
+}
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+)
